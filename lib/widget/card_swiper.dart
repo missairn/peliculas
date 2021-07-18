@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_card_swipper/flutter_card_swiper.dart';
 
 class CardSwiper extends StatelessWidget {
   @override
@@ -10,7 +11,6 @@ class CardSwiper extends StatelessWidget {
       width: double.infinity,
       height: size.height *
           0.5, //acá selecciono el porcentaje que quiero que cubra el widget de la pantalla
-      color: Colors.grey,
       child: Swiper(
           itemCount: 10, //cantidad de tarjetas en mi swiper
           layout: SwiperLayout.STACK,
