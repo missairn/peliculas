@@ -15,11 +15,21 @@ class CardSwiper extends StatelessWidget {
           itemCount: 10, //cantidad de tarjetas en mi swiper
           layout: SwiperLayout.STACK,
           itemWidth: size.width * 0.6,
-          itemHeight: size.height * 0.9,
+          itemHeight: size.height * 0.4,
           itemBuilder: (_, int index) {
-            return FadeInImage(
-                placeholder: AssetImage('assets/no-image.jpg'),
-                image: NetworkImage('http://via.placeholder.com/300x400'));
+            return GestureDetector(
+              onTap: () => Navigator.pushNamed(context, 'details',
+                  arguments:
+                      'movie-instance'), //definí la ruta y los argumentos para cambiar a la pantalla detalles
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: FadeInImage(
+                  placeholder: AssetImage('assets/no-image.jpg'),
+                  image: NetworkImage('http://via.placeholder.com/300x400'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            );
           }),
     );
   }
