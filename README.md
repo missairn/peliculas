@@ -1,6 +1,6 @@
 # peliculas
 
-My new Flutter project for practice!
+My new Flutter project!
 
 Be free to check all the components 💙
 

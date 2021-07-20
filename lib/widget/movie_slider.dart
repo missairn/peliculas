@@ -17,17 +17,40 @@ class MovieSlider extends StatelessWidget {
         Expanded(
           //envolví el listview en un widget para que se expanda con el tamaño que le pida el wildget padre
           child: ListView.builder(
-            itemCount: 20,
-            itemBuilder: (_, int index) {
-              return Container(
-                width: 130,
-                height: 190,
-                color: Colors.green,
-              );
-            },
-          ),
+              scrollDirection: Axis.horizontal,
+              itemCount: 20,
+              itemBuilder: (_, int index) => _MoviePoster()),
         ),
       ]),
+    );
+  }
+}
+
+class _MoviePoster extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 130,
+      height: 190,
+      color: Colors.pink,
+      margin: EdgeInsets.symmetric(horizontal: 10),
+      child: Column(
+        children: [
+          FadeInImage(
+            placeholder: AssetImage('assets/no-image.jpg'),
+            image: NetworkImage('http://via.placeholder.com/300x400'),
+            width: 130,
+            height: 190,
+            fit: BoxFit.cover,
+          ),
+          Text(
+            'Starwars',
+            overflow: TextOverflow.ellipsis,
+            maxLines: 2,
+            textAlign: TextAlign.center,
+          )
+        ],
+      ),
     );
   }
 }
