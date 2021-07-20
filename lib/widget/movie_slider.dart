@@ -13,6 +13,9 @@ class MovieSlider extends StatelessWidget {
                     20), //el padding es para separar el texto del borde del widget
             child: Text('Populars',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold))),
+        SizedBox(
+          height: 5,
+        ),
         Expanded(
           //envolví el listview en un widget para que se expanda con el tamaño que le pida el wildget padre
           child: ListView.builder(
