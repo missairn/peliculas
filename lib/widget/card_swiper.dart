@@ -18,7 +18,7 @@ class CardSwiper extends StatelessWidget {
           itemHeight: size.height * 0.9,
           itemBuilder: (_, int index) {
             return FadeInImage(
-                placeholder: NetworkImage('http://via.placeholder.com/300x400'),
+                placeholder: AssetImage('assets/no-image.jpg'),
                 image: NetworkImage('http://via.placeholder.com/300x400'));
           }),
     );
