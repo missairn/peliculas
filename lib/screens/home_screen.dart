@@ -6,18 +6,25 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Pelis en cines'),
+          title: Text('On demand'),
           elevation: 0,
           actions: [
             IconButton(onPressed: () {}, icon: Icon(Icons.search_outlined))
           ],
         ),
-        body: Column(
-          children: [
-            CardSwiper()
-            // Card swipper
-            //listado de pelis
-          ],
+        body: SingleChildScrollView(
+          //permite hacer scroll
+          child: Column(
+            children: [
+              //tarjetas principales
+
+              CardSwiper(),
+
+              //slider de peliculas
+
+              MovieSlider(),
+            ],
+          ),
         ));
   }
 }
